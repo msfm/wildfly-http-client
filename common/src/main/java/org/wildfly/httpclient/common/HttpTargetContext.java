@@ -195,7 +195,7 @@ public class HttpTargetContext extends AbstractAttachable {
                                                     String path = c.getPath();
                                                     if (path == null || path.isEmpty() || request.getPath().startsWith(path)) {
                                                         HttpClientMessages.MESSAGES.debugf("Use sessionId %s as a request cookie for session affinity", c.getValue());
-                                                        request.getRequestHeaders().add(Headers.COOKIE, JSESSIONID + "=" + c.getValue());
+                                                        request.getRequestHeaders().put(Headers.COOKIE, JSESSIONID + "=" + c.getValue());
                                                         setSessionId(c.getValue());
                                                     }
                                                 }
